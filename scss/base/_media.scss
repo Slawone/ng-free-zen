@@ -1,0 +1,36 @@
+$desktop-xl: 1440px;
+$dektop-lg: 1152px;
+$tablet: 768px;
+
+@mixin desktop-xl {
+  @media (min-width: $desktop-xl) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media (min-width: $dektop-lg) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+// === hover ===
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media (hover: none) {
+     &:active {
+      @content;
+    }
+  }
+}

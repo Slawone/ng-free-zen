@@ -1,0 +1,15 @@
+:root {
+  // fonts
+  --base-font: 'Nunito', sans-serif;
+
+  //colors
+  --main-color: #000;
+  --background-color: #fff;
+  --checkbox-color: #00A1FF;
+  --footer-background-color: #484848
+}
+
+[class="dark"] {
+  --main-color: #fff;
+  --background-color: #484848;
+}

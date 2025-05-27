@@ -1,0 +1,28 @@
+body {
+  font-family: var(--base-font);
+  color: var(--main-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+h1 {
+  @include fluid-text(56, 30);
+}
+
+h2 {
+  @include fluid-text(40, 26);
+}
+
+h3 {
+  @include fluid-text(20, 16);
+}
+
+p {
+  @include fluid-text(20, 14);
+}
