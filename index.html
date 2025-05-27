@@ -8,7 +8,44 @@
     <script type="module" src="./js/index.js"></script>
   </head>
   <body>
-    <header class="header">header</header>
+    <header class="header">
+      <div class="header__wrapper container">
+        <a class="header__logo" href="">
+          <img src="./assets/logo.svg" alt="logo" width="77" height="30" loading="lazy">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+              <a class="header__link" href="#!">Download</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#!">Warranty</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#!">Care</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#!">Cashback</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#!">Clients</a>
+            </li>
+          </ul>
+        </nav>
+        <select class="header__language">
+          <option value="en">EN</option>
+          <option value="ru">RU</option>
+        </select>
+        <button class="header__theme-btn">
+          <img src="./assets/icons/moon.svg" alt="moon">
+        </button>
+        <button class="header__burger-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
     <section class="download">
       <div class="download__wrapper container">
         <div class="download__text-block">
