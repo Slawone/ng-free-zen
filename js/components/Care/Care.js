@@ -1,24 +1,34 @@
-const Care = (data) => {
-  const { name, title, texts, image } = data;
+/**
+ * @typedef {import('./types').Care} Care;
+ */
+
+/**
+ * @function Care
+ * @description Large UI component
+ * @param {Care} data
+ * @returns {string} HTML ot Empty
+ */
+
+export const Care = (data) => {
+
+  if (!data) return '';
 
   return /* html */ `
-    <section class="${name}">
-      <div class="${name}__wrapper">
-        <div class="${name}__text-block">
-          <h1 class="${name}__title">${title.value}</h1>
-          ${texts
-            .map((text) => `<p class="${name}__copy">${text}</p>`)
+    <section class="care">
+      <div class="care__wrapper">
+        <div class="care__text-block">
+          <h1 class="care__title">${data.title.value}</h1>
+          ${data.texts
+            .map((text) => `<p class="care__copy">${text}</p>`)
             .join('')}
         </div>
-        <div class="${name}__image-block">
+        <div class="care__image-block">
           <img
-            src="${image.source}"
-            alt="${image.description}"
+            src="${data.image.source}"
+            alt="${data.image.description}"
           />
         </div>
       </div>
     </section>
   `;
 };
-
-export default Care;

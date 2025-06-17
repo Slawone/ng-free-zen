@@ -1,35 +1,33 @@
-const Download = (data) => {
+/**
+ * @typedef {import('./types').Download} Download;
+ */
 
-  const { name, title, texts, buttons, image } = data;
+/**
+ * @function Download
+ * @description Large UI component
+ * @param {Download} data
+ * @returns {string} HTML or empty
+ */
+
+export const Download = (data) => {
+
+  if (!data) return '';
 
   return /* html */`
-    <section class="${name}">
-      <div class="${name}__wrapper">
-        <div class="${name}__text-block">
-          <h1 class="${name}__title">${title.value}</h1>
-          ${texts.map(text => `<p class="${name}__copy">${text}</p>`).join('')}
-          <div class="${name}__links">
-            ${buttons.map(button => {
-              return `
-                <a class="${name}__link">
-                  <img
-                    src="${button.source}"
-                    alt="${button.description}"
-                  >
-                </a>
-              `;
-            }).join('')}
-          </div>
+    <section class="download">
+      <div class="download__wrapper">
+        <div class="download__text-block">
+          <h1 class="download__title">${data.title.value}</h1>
+          ${data.texts.map((text) => `<p class="download__copy">${text}</p>`).join('')}
+          <div class="download__links"></div>
         </div>
-        <div class="${name}__image-block">
+        <div class="download__image-block">
           <img
-            src="${image.source}"
-            alt="${image.description}"
+            src="${data.image.source}"
+            alt="${data.image.description}"
           />
         </div>
       </div>
     </section>
   `;
-}
-
-export default Download;
+};

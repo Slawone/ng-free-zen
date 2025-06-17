@@ -1,23 +1,32 @@
-const Warranty = (data) => {
+/**
+ * @typedef {import('./types').Warranty} Warranty;
+ */
 
-  const { name, title, texts, image } = data;
+/**
+ * @function Warranty
+ * @description Large UI component
+ * @param {Warranty} data
+ * @returns {string} HTML or empty
+ */
+
+export const Warranty = (data) => {
+
+  if (!data) return '';
 
   return /* html */ `
-    <section class="${name}">
-      <div class="${name}__wrapper">
-        <div class="${name}__text-block">
-          <h1 class="${name}__title">${title.value}</h1>
-          ${texts.map((text) => `<p class="${name}__copy">${text}</p>`).join('')}
+    <section class="warranty">
+      <div class="warranty__wrapper">
+        <div class="warranty__text-block">
+          <h1 class="warranty__title">${data.title.value}</h1>
+          ${data.texts.map((text) => `<p class="warranty__copy">${text}</p>`).join('')}
         </div>
-        <div class="${name}__image-block">
+        <div class="warranty__image-block">
           <img
-            src="${image.source}"
-            alt="${image.description}"
+            src="${data.image.source}"
+            alt="${data.image.description}"
           />
         </div>
       </div>
     </section>
   `;
 }
-
-export default Warranty;
