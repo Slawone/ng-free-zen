@@ -5,24 +5,43 @@
 /**
  * @function Cashback;
  * @description Large UI component
- * @param {Cashback} data
- * @returns {string} HTML ot empty
+ * @returns {Promise<string>} HTML ot empty
  */
 
-export const Cashback = (data) => {
+export const Cashback = async () => {
 
-  if (!data) return '';
+  const API_URL = 'http://localhost:3000/data/cashback';
 
-  return /* html */ `
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data);
+
+    return /* html */ `
     <section class="cashback">
       <div class="cashback__wrapper">
         <div class="cashback__text-block">
           <h1 class="cashback__title">${data.title.value}</h1>
           ${data.texts
-            .map((text) => `<p class="cashback__copy">${text}</p>`)
+            .map(
+              /**
+               * @param {string} text
+               */
+              (text) => `<p class="cashback__copy">${text}</p>`
+            )
             .join('')}
         </div>
+        <button class="cashback__button" id="order-button" type="button">Order a consultation</button>
       </div>
     </section>
   `;
+  } catch (Error) {
+    console.error(Error)
+    return '';
+  }
+
+
 };

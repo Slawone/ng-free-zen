@@ -1,0 +1,59 @@
+.cashback {
+  padding: 30px 0;
+
+  @include desktop-lg {
+    padding: 40px 0;
+  }
+
+  @include desktop-xl {
+    padding: 50px 0;
+  }
+
+  &__text-block {
+    max-width: 580px;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__copy {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include desktop-lg {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 290px;
+    margin-inline: auto;
+    border: 1px solid #aaa;
+    border-radius: 30px;
+    font-size: 16px;
+    padding: 14px 0;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include desktop-lg {
+      font-size: 18px;
+    }
+
+    @include desktop-xl {
+      font-size: 20px;
+    }
+  }
+}

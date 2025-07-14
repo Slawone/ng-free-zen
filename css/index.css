@@ -139,13 +139,6 @@ body {
   background-color: var(--background-color);
 }
 
-.container {
-  max-width: 1110px;
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: 15px;
-}
-
 h1 {
   font-size: clamp(30px, 3.8888888889vw, 56px);
 }
@@ -160,6 +153,352 @@ h3 {
 
 p {
   font-size: clamp(14px, 1.3888888889vw, 20px);
+}
+
+.download {
+  padding: 30px 0;
+}
+@media (min-width: 1152px) {
+  .download {
+    padding: 40px 0;
+  }
+}
+@media (min-width: 1440px) {
+  .download {
+    padding: 50px 0;
+  }
+}
+.download__wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+@media (min-width: 768px) {
+  .download__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+}
+.download__text-block {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+.download__title {
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .download__title {
+    line-height: 50px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1152px) {
+  .download__title {
+    line-height: 58px;
+  }
+}
+@media (min-width: 1440px) {
+  .download__title {
+    line-height: 76px;
+  }
+}
+.download__copy {
+  margin-bottom: 20px;
+}
+.download__links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  .download__links {
+    flex-direction: row;
+    column-gap: 20px;
+  }
+}
+.download__image-block img {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+}
+
+.warranty {
+  padding: 30px 0;
+}
+@media (min-width: 1152px) {
+  .warranty {
+    padding: 40px 0;
+  }
+}
+@media (min-width: 1440px) {
+  .warranty {
+    padding: 50px 0;
+  }
+}
+.warranty__wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+@media (min-width: 768px) {
+  .warranty__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+}
+.warranty__text-block {
+  max-width: 500px;
+  margin-bottom: 30px;
+  order: 2;
+}
+.warranty__title {
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .warranty__title {
+    line-height: 50px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1152px) {
+  .warranty__title {
+    line-height: 58px;
+  }
+}
+@media (min-width: 1440px) {
+  .warranty__title {
+    line-height: 76px;
+  }
+}
+.warranty__copy:not(:last-child) {
+  margin-bottom: 20px;
+}
+.warranty__image-block {
+  order: 1;
+}
+.warranty__image-block img {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+}
+
+.care {
+  padding: 30px 0;
+}
+@media (min-width: 1152px) {
+  .care {
+    padding: 40px 0;
+  }
+}
+@media (min-width: 1440px) {
+  .care {
+    padding: 50px 0;
+  }
+}
+.care__wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+@media (min-width: 768px) {
+  .care__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+}
+.care__text-block {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+.care__title {
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .care__title {
+    line-height: 50px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1152px) {
+  .care__title {
+    line-height: 58px;
+  }
+}
+@media (min-width: 1440px) {
+  .care__title {
+    line-height: 76px;
+  }
+}
+.care__copy:not(:last-child) {
+  margin-bottom: 20px;
+}
+.care__image-block img {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+}
+
+.cashback {
+  padding: 30px 0;
+}
+@media (min-width: 1152px) {
+  .cashback {
+    padding: 40px 0;
+  }
+}
+@media (min-width: 1440px) {
+  .cashback {
+    padding: 50px 0;
+  }
+}
+.cashback__text-block {
+  max-width: 580px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.cashback__title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .cashback__title {
+    margin-bottom: 20px;
+  }
+}
+.cashback__copy:not(:last-child) {
+  margin-bottom: 10px;
+}
+@media (min-width: 1152px) {
+  .cashback__copy:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.cashback__button {
+  display: block;
+  width: 290px;
+  margin-inline: auto;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 14px 0;
+}
+@media (min-width: 768px) {
+  .cashback__button {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1152px) {
+  .cashback__button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  .cashback__button {
+    font-size: 20px;
+  }
+}
+
+.clients {
+  padding: 30px 0;
+}
+@media (min-width: 1152px) {
+  .clients {
+    padding: 40px 0;
+  }
+}
+@media (min-width: 1440px) {
+  .clients {
+    padding: 50px 0;
+  }
+}
+.clients__wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin-inline: auto;
+  padding-inline: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+@media (min-width: 1152px) {
+  .clients__wrapper {
+    justify-content: space-around;
+  }
+}
+.clients__img img {
+  width: 130px;
+  height: 50px;
+}
+@media (min-width: 768px) {
+  .clients__img img {
+    width: 150px;
+    height: 55px;
+  }
+}
+@media (min-width: 1152px) {
+  .clients__img img {
+    width: 200px;
+    height: 70px;
+  }
+}
+
+.footer {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-content: center;
+  display: none;
+}
+.modal__body {
+  background-color: azure;
+  max-width: 600px;
+  margin-inline: auto;
+  position: relative;
+}
+.modal__close {
+  position: absolute;
+  right: 0;
+  top: -50px;
+}
+.modal__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.modal .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal .form__input input {
+  border: 1px solid #000000;
 }
 
 /*# sourceMappingURL=index.css.map */

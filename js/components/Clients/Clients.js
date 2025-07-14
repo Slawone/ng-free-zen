@@ -4,36 +4,40 @@
 
 /**
  * @function Clients
- * @param {Clients} clients
- * @returns
+ * @description Large UI component
+ * @returns {Promise<string>} HTML or empty
  */
 
-export const Clients = (clients) => {
+export const Clients = async () => {
 
-  const section = document.createElement('section');
-  const wrapper = document.createElement('div');
-  const list = document.createElement('ul');
+  const API_URL = 'http://localhost:3000/data/clients';
 
-  section.className = 'clients';
-  wrapper.className = 'clients__wrapper';
-  list.className = 'list';
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
-  for (const client of clients.clients) {
-    const listItem = document.createElement('li');
-    const image = document.createElement('img');
+    const /** @type {*} */ data = await response.json();
+    console.log(data);
 
-    listItem.classList = 'list__item';
-
-    image.src = client.image.source;
-    image.alt = client.image.description;
-
-    listItem.append(image);
-
-    list.append(listItem);
+    return /* html */ `
+      <section class="clients">
+        <div class="clients__wrapper">
+        ${data.clients
+          .map(
+            (/** @type {Clients} */ client) => `
+            <div class="clients__img">
+              <img src=${client.image.source} alt=${client.image.description}>
+            </div>
+          `
+          )
+          .join('')}
+        </div>
+      </section>
+    `;
+  } catch (Error) {
+    console.error(Error);
+    return '';
   }
-
-  wrapper.append(list);
-  section.append(wrapper);
-
-  return section;
 }
