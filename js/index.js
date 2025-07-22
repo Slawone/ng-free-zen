@@ -6,13 +6,12 @@ import { Cashback } from './components/Cashback/Cashback.js';
 import { Clients } from './components/Clients/Clients.js';
 import { Footer } from './components/Footer/Footer.js';
 import { Modal } from './components/Modal/Modal.js';
-// import './helpers/postForm.js';
+import {handleShowModal} from './handlers/handlers.js';
 
 const $root = document.getElementById('root');
 
 (async () => {
   if ($root) {
-    /* Построение UI */
     $root.insertAdjacentHTML('beforeend', await Header());
     $root.insertAdjacentHTML('beforeend', await Download());
     $root.insertAdjacentHTML('beforeend', await Warranty());
@@ -20,14 +19,12 @@ const $root = document.getElementById('root');
     $root.insertAdjacentHTML('beforeend', await Cashback());
     $root.insertAdjacentHTML('beforeend', await Clients());
     $root.insertAdjacentHTML('beforeend', await Footer());
-    $root.insertAdjacentHTML('beforeend', Modal());
+    $root.insertAdjacentHTML('beforeend', await Modal());
 
-    /* Регистрация событий */
+    const $showModalButton = document.getElementById('order-button');
+    const $modal = document.getElementById('modal');
     const $form = document.getElementById('order');
 
-    console.log($form);
-
-
-    $form.addEventListener('submit', () => {})
+    $showModalButton?.addEventListener('click', handleShowModal)
   }
 })();

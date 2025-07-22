@@ -1,6 +1,12 @@
-export const Modal = () => {
+/**
+ * @function Modal
+ * @description Modal component
+ * @returns {Promise<string>} HTML or empty
+ */
+
+export const Modal = async () => {
   return /* html */ `
-    <div class="modal open" id="modal">
+    <div class="modal" id="modal">
       <div class="modal__body">
         <!-- close button -->
         <button class="modal__close" id="close" type="button">
@@ -9,7 +15,7 @@ export const Modal = () => {
         <!-- title -->
         <h3 class="modal__title">Order a consultation</h3>
         <!-- form -->
-        <form class="form" id="order">˚
+        <form class="form" id="order">
           <!-- input name -->
           <label class="form__input">
             <span>Name</span>
@@ -18,7 +24,7 @@ export const Modal = () => {
           <!-- input tel -->
           <label class="form__input">
             <span>Tel</span>
-            <input type="tel" id="tel" name="tel"/>k
+            <input type="tel" id="tel" name="tel"/>
           </label>
           <!-- input email -->
           <label class="form__input">

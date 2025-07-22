@@ -1,5 +1,5 @@
 /**
- * @typedef {import('./types').Clients} Clients;
+ * @typedef {import('./types').Clients} ClientsData;
  */
 
 /**
@@ -9,7 +9,6 @@
  */
 
 export const Clients = async () => {
-
   const API_URL = 'http://localhost:3000/data/clients';
 
   try {
@@ -19,14 +18,16 @@ export const Clients = async () => {
     }
 
     const /** @type {*} */ data = await response.json();
-    console.log(data);
 
     return /* html */ `
       <section class="clients">
         <div class="clients__wrapper">
         ${data.clients
           .map(
-            (/** @type {Clients} */ client) => `
+            (
+              /** @type {{ image: { source: string; description: string } }} */
+              client
+            ) => `
             <div class="clients__img">
               <img src=${client.image.source} alt=${client.image.description}>
             </div>
@@ -40,4 +41,4 @@ export const Clients = async () => {
     console.error(Error);
     return '';
   }
-}
+};

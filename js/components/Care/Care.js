@@ -18,7 +18,6 @@ export const Care = async () => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     return /* html */ `
       <section class="care">

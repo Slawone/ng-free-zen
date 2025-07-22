@@ -10,14 +10,12 @@
 
 export const Footer = async () => {
   const API_URL = 'http://localhost:3000/data/meta';
-
   try {
     const response = await fetch(API_URL);
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
 
     return /* html */ `
     <footer class="footer" style="background-color: #000; color: #fff">
@@ -50,8 +48,8 @@ export const Footer = async () => {
                           link.name
                             ? `<a class="footer__link" href="${link.url}" target="_blank">${link.name}</a>`
                             : link.source
-                              ? `<a class="footer__link" href="${link.url}" target="_blank"><img src=${link.source}></a>`
-                              : `<a class="footer__link" href="mailto:${link.email}" target="_blank">${link.email}</a>`
+                            ? `<a class="footer__link" href="${link.url}" target="_blank"><img src=${link.source}></a>`
+                            : `<a class="footer__link" href="mailto:${link.email}" target="_blank">${link.email}</a>`
                         }
                       </li>`;
                       }

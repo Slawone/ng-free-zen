@@ -138,6 +138,9 @@ body {
   color: var(--main-color);
   background-color: var(--background-color);
 }
+body.open {
+  overflow: hidden;
+}
 
 h1 {
   font-size: clamp(30px, 3.8888888889vw, 56px);
@@ -463,12 +466,8 @@ p {
   }
 }
 
-.footer {
-  display: none;
-}
-
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -476,6 +475,9 @@ p {
   background-color: rgba(0, 0, 0, 0.7);
   align-content: center;
   display: none;
+}
+.modal.open {
+  display: block;
 }
 .modal__body {
   background-color: azure;
