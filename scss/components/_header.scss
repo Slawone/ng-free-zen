@@ -1,6 +1,193 @@
 .header {
-  // display: none;
-  // &__desktop-list {
-  //   display: none;
-  // }
+  height: $header-heigth;
+  padding-inline: 15px;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color);
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @include desktop-lg {
+    height: $header-height-lg;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 77px;
+    height: 30px;
+
+    @include desktop-lg {
+      width: 102px;
+      height: 40px;
+    }
+  }
+
+  &__list {
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+      position: fixed;
+      top: $header-heigth;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+    }
+
+    @include desktop-lg {
+      opacity: 1;
+      pointer-events: all;
+      margin-right: 40px;
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+    }
+
+    @include desktop-xl {
+      margin-right: 50px;
+      column-gap: 50px;
+    }
+  }
+
+  &__item {
+    border-bottom: var(--border);
+
+    @include desktop-lg {
+      border-bottom: none;
+    }
+
+    a {
+      display: block;
+      padding-block: 24px;
+      padding-left: 15px;
+      font-size: 24px;
+      text-transform: capitalize;
+
+      @include desktop-lg {
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    @include tablet {
+      column-gap: 30px;
+    }
+
+    @include desktop-lg {
+      column-gap: 40px;
+    }
+
+    @include desktop-xl {
+      column-gap: 50px;
+    }
+  }
+
+  &__select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding: 8px 23px 8px 8px;
+    font-size: 14px;
+    color: var(--main-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    background-image: url('../../assets/icons/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: 80% 50%;
+
+    @include desktop-lg {
+      font-size: 16px;
+    }
+  }
+
+  &__theme-btn {
+    width: 25px;
+    height: 25px;
+
+    @include desktop-lg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__burger-button {
+    position: relative;
+
+    span {
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+    }
+
+    &.active {
+      span {
+        opacity: 0;
+      }
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    @include desktop-lg {
+      display: none;
+    }
+  }
 }

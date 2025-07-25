@@ -1,6 +1,11 @@
+import { Title } from '../../components/Title/Title.js';
+import { Paragraph } from '../../components/Paragraph/Paragraph.js';
+import { Image } from '../../components/Image/Image.js';
+
 /**
  * @typedef {import('./types').Download} Download;
  */
+
 
 /**
  * @function Download
@@ -22,29 +27,22 @@ export const Download = async () => {
       <section class="download">
         <div class="download__wrapper">
           <div class="download__text-block">
-            <h1 class="download__title">${data.title.value}</h1>
+            ${Title(1, 'download__title', data.title.value)}
             ${data.texts
-              .map(
-                /**             *
-                 * @param {string} text
-                 */
-                (text) => `<p class="download__copy">${text}</p>`
-              )
-              .join('')}
+              .map(/** @param {string} text*/text => Paragraph(text, 'download__copy'))
+              .join('')
+            }
             <div class="download__links">
               <a href="#!">
-                <img src="./assets/icons/link-apple.svg" alt="apple" />
+                ${Image('/assets/icons/link-apple.svg', 'apple')}
               </a>
               <a href="#!">
-                <img src="./assets/icons/link-google.svg" alt="google" />
+                ${Image('/assets/icons/link-google.svg', 'google')}
               </a>
             </div>
           </div>
           <div class="download__image-block">
-            <img
-              src=${data.image.source}
-              alt="${data.image.description}"
-            />
+            ${Image(`${data.image.source}`, `${data.image.description}`)}
           </div>
         </div>
       </section>

@@ -1,11 +1,23 @@
 body {
   font-family: var(--base-font);
-  color: var(--main-color);
-  background-color: var(--background-color);
+  font-size: 16px;
+  padding-top: $header-heigth;
 
   &.open {
     overflow: hidden;
   }
+
+  @include desktop-lg {
+    padding-top: $header-height-lg;
+  }
+}
+
+a {
+  color: currentColor;
+}
+
+img {
+  width: 100%;
 }
 
 h1 {

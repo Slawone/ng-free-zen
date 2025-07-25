@@ -125,7 +125,8 @@ legend {
   --main-color: #000;
   --background-color: #fff;
   --checkbox-color: #00A1FF;
-  --footer-background-color: #484848 ;
+  --footer-background-color: #484848;
+  --border: 1px solid #aaa;
 }
 
 [class=dark] {
@@ -135,11 +136,24 @@ legend {
 
 body {
   font-family: var(--base-font);
-  color: var(--main-color);
-  background-color: var(--background-color);
+  font-size: 16px;
+  padding-top: 50px;
 }
 body.open {
   overflow: hidden;
+}
+@media (min-width: 1152px) {
+  body {
+    padding-top: 78px;
+  }
+}
+
+a {
+  color: currentColor;
+}
+
+img {
+  width: 100%;
 }
 
 h1 {
@@ -156,6 +170,193 @@ h3 {
 
 p {
   font-size: clamp(14px, 1.3888888889vw, 20px);
+}
+
+.header {
+  height: 50px;
+  padding-inline: 15px;
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color);
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@media (min-width: 1152px) {
+  .header {
+    height: 78px;
+  }
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+.header__nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  width: 77px;
+  height: 30px;
+}
+@media (min-width: 1152px) {
+  .header__logo {
+    width: 102px;
+    height: 40px;
+  }
+}
+.header__list {
+  opacity: 0;
+  pointer-events: none;
+}
+.header__list.active {
+  opacity: 1;
+  pointer-events: all;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+@media (min-width: 1152px) {
+  .header__list {
+    opacity: 1;
+    pointer-events: all;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .header__list {
+    margin-right: 50px;
+    column-gap: 50px;
+  }
+}
+.header__item {
+  border-bottom: var(--border);
+}
+@media (min-width: 1152px) {
+  .header__item {
+    border-bottom: none;
+  }
+}
+.header__item a {
+  display: block;
+  padding-block: 24px;
+  padding-left: 15px;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+@media (min-width: 1152px) {
+  .header__item a {
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+.header__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+@media (min-width: 768px) {
+  .header__actions {
+    column-gap: 30px;
+  }
+}
+@media (min-width: 1152px) {
+  .header__actions {
+    column-gap: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  .header__actions {
+    column-gap: 50px;
+  }
+}
+.header__select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: 8px 23px 8px 8px;
+  font-size: 14px;
+  color: var(--main-color);
+  background-color: var(--background-color);
+  border: 1px solid var(--main-color);
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  background-image: url("../../assets/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: 80% 50%;
+}
+@media (min-width: 1152px) {
+  .header__select {
+    font-size: 16px;
+  }
+}
+.header__theme-btn {
+  width: 25px;
+  height: 25px;
+}
+@media (min-width: 1152px) {
+  .header__theme-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+.header__burger-button {
+  position: relative;
+}
+.header__burger-button span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+}
+.header__burger-button::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+}
+.header__burger-button::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+}
+.header__burger-button.active span {
+  opacity: 0;
+}
+.header__burger-button.active::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.header__burger-button.active::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+@media (min-width: 1152px) {
+  .header__burger-button {
+    display: none;
+  }
 }
 
 .download {

@@ -6,10 +6,17 @@
   --main-color: #000;
   --background-color: #fff;
   --checkbox-color: #00A1FF;
-  --footer-background-color: #484848
+  --footer-background-color: #484848;
+
+  --border: 1px solid #aaa;
 }
 
 [class="dark"] {
   --main-color: #fff;
   --background-color: #484848;
 }
+
+//header-height
+$header-heigth: 50px;
+$header-height-lg: 78px;
+

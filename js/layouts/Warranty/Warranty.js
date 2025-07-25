@@ -1,3 +1,7 @@
+import { Title } from '../../components/Title/Title.js';
+import { Paragraph } from '../../components/Paragraph/Paragraph.js';
+import { Image } from '../../components/Image/Image.js';
+
 /**
  * @typedef {import('./types').Warranty} Warranty;
  */
@@ -22,21 +26,16 @@ export const Warranty = async () => {
       <section class="warranty">
         <div class="warranty__wrapper">
           <div class="warranty__text-block">
-            <h1 class="warranty__title">${data.title.value}</h1>
+            ${Title(1, 'warranty__title', data.title.value)}
             ${data.texts
               .map(
-                /**             *
-                 * @param {string} text
-                 */
-                (text) => `<p class="warranty__copy">${text}</p>`
+                /** @param {string} text*/ (text) =>
+                  Paragraph(text, 'warranty__copy')
               )
               .join('')}
           </div>
           <div class="warranty__image-block">
-            <img
-              src="${data.image.source}"
-              alt="${data.image.description}"
-            />
+            ${Image(`${data.image.source}`, `${data.image.description}`)}
           </div>
         </div>
       </section>
