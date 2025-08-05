@@ -41,9 +41,11 @@
 
   &__list {
     opacity: 0;
+    display: none;
     pointer-events: none;
 
     &.active {
+      display: block;
       opacity: 1;
       pointer-events: all;
       position: fixed;

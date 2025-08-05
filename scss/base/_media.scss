@@ -1,5 +1,5 @@
 $desktop-xl: 1440px;
-$dektop-lg: 1152px;
+$desktop-lg: 1152px;
 $tablet: 768px;
 
 @mixin desktop-xl {
@@ -9,7 +9,7 @@ $tablet: 768px;
 }
 
 @mixin desktop-lg {
-  @media (min-width: $dektop-lg) {
+  @media (min-width: $desktop-lg) {
     @content;
   }
 }

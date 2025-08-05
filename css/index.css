@@ -148,6 +148,23 @@ body.open {
   }
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#main {
+  flex: 1;
+}
+
+section {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 a {
   color: currentColor;
 }
@@ -214,9 +231,11 @@ p {
 }
 .header__list {
   opacity: 0;
+  display: none;
   pointer-events: none;
 }
 .header__list.active {
+  display: block;
   opacity: 1;
   pointer-events: all;
   position: fixed;
@@ -360,16 +379,16 @@ p {
 }
 
 .download {
-  padding: 30px 0;
+  padding-block: 30px;
 }
 @media (min-width: 1152px) {
   .download {
-    padding: 40px 0;
+    padding-block: 40px;
   }
 }
 @media (min-width: 1440px) {
   .download {
-    padding: 50px 0;
+    padding-block: 50px;
   }
 }
 .download__wrapper {
@@ -377,13 +396,15 @@ p {
   max-width: 1110px;
   margin-inline: auto;
   padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 @media (min-width: 768px) {
   .download__wrapper {
-    display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    column-gap: 30px;
+    align-items: center;
   }
 }
 .download__text-block {
@@ -401,16 +422,6 @@ p {
     margin-bottom: 20px;
   }
 }
-@media (min-width: 1152px) {
-  .download__title {
-    line-height: 58px;
-  }
-}
-@media (min-width: 1440px) {
-  .download__title {
-    line-height: 76px;
-  }
-}
 .download__copy {
   margin-bottom: 20px;
 }
@@ -424,6 +435,9 @@ p {
     flex-direction: row;
     column-gap: 20px;
   }
+}
+.download__links a {
+  width: 150px;
 }
 .download__image-block img {
   width: 100%;
@@ -665,6 +679,44 @@ p {
     width: 200px;
     height: 70px;
   }
+}
+
+.footer {
+  padding: 30px 0;
+  background-color: #484848;
+}
+@media (min-width: 1152px) {
+  .footer {
+    padding: 40px 0;
+  }
+}
+@media (min-width: 1440px) {
+  .footer {
+    padding: 50px 0;
+  }
+}
+.footer__wrapper {
+  width: 100%;
+  max-width: 1110px;
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+.footer__top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+@media (min-width: 768px) {
+  .footer__top {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.footer__column {
+  color: #fff;
+}
+.footer__link-image {
+  width: 40px;
+  height: 40px;
 }
 
 .modal {

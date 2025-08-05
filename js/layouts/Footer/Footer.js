@@ -18,7 +18,7 @@ export const Footer = async () => {
     const data = await response.json();
 
     return /* html */ `
-    <footer class="footer" style="background-color: #000; color: #fff">
+    <footer class="footer">
       <div class="footer__wrapper">
         <div class="footer__top">
           ${data.categories
@@ -48,7 +48,7 @@ export const Footer = async () => {
                           link.name
                             ? `<a class="footer__link" href="${link.url}" target="_blank">${link.name}</a>`
                             : link.source
-                            ? `<a class="footer__link" href="${link.url}" target="_blank"><img src=${link.source}></a>`
+                            ? `<a class="footer__link" href="${link.url}" target="_blank"><img class="footer__link-image" src=${link.source}></a>`
                             : `<a class="footer__link" href="mailto:${link.email}" target="_blank">${link.email}</a>`
                         }
                       </li>`;
